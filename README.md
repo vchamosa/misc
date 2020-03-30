@@ -1,2 +1,2 @@
-# Coursework
-Assignments and other bits and bobs - plenty of which are unfinished
+# Misc
+Bits of coursework and other random scripts - plenty of which are unfinished
