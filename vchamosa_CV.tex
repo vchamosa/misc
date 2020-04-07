@@ -1,0 +1,174 @@
+%% Curriculum Vitae
+%
+% Heavily inspired by the howtotex.com template
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[paper=a4,fontsize=11pt]{scrartcl}
+
+%% Packages
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{graphicx}
+\usepackage[svgnames]{xcolor}
+\usepackage{geometry}
+	\textheight=690px
+	\addtolength{\voffset}{-1cm}
+\usepackage{url}
+\usepackage[hidelinks=true]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[us,24hr]{datetime}
+    \frenchspacing
+    \pagestyle{fancy}
+    \fancyhf{}
+    \cfoot{\footnotesize {Victor Chamosa Pino · {Last compiled on {\ddmmyyyydate\today}}}} % latest update footnote
+    \renewcommand{\headrulewidth}{0pt}
+\usepackage{sectsty}
+    \sectionfont{
+	    \usefont{OT1}{phv}{b}{n}
+	    \sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%% Macros
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}
+\newcommand{\sepspace}{\vspace*{1em}}
+
+\newcommand{\MyName}[1]{ % name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+
+\newcommand{\Contactdetails}[1]{ % for email and other account/contact details
+		\normalsize  \usefont{OT1}{phv}{m}{n}\hfill #1
+		\par \small \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\textsc{#1}}} % sections
+
+\newcommand{\ExperienceEntry}[5]{ % studies, jobs and other experience
+		\noindent \textbf{#1} \hfill % degree/position
+		\colorbox{White}{
+            \parbox{9em}{
+			\hfill\color{Black}#2}} \par % duration
+		\noindent \textit{#3} \par % location/organisation
+		\noindent\hangindent=1em\hangafter=0 \small #4 % description
+		\normalsize \par
+		\hangindent=1em\hangafter=1 \small #5 \par} % project name
+		
+\newcommand{\SkillsEntry}[2]{ % skills
+		\noindent\hangindent=0em\hangafter=0 
+		\parbox{\spacebox}{        
+		\textbf{#1}} % skill category
+		\hspace{2em} \hangindent=1em \hangafter=1 #2 \par} % skill list etc	
+        
+\newcommand{\AffiliationEntry}[3]{ % societal affiliations
+		\noindent \textbf{#1} \hfill % society
+		\colorbox{White}{
+            \parbox{9em}{
+			\hfill\color{Black}#2}} \par % duration
+		\noindent #3 \par} % membership type
+
+
+
+%% Content
+\begin{document}
+
+
+%% Name, etc
+\MyName{Victor Chamosa Pino}
+\sepspace
+\Contactdetails{\url{s1346505@ed.ac.uk} \thinspace$\bullet$ \thinspace \href{https://github.com/vchamosa}{\includegraphics[scale = 0.28]{GitHub-Mark-32px.png}\small{vchamosa}}} %GitHub logo source: https://github.com/logos
+
+
+%% Education
+\NewPart{Education}{}
+
+\ExperienceEntry{Precision Medicine DTP}{Sep 2018 - present}{Duguid Lab, University of Edinburgh}{MRC-funded PhD studentship with integrated study.}{\textbf{Project:} \textit{Thalamocortical Control of Motor Choice}. Supervised by Prof Ian Duguid and Dr Matthias Hennig}
+\sepspace
+
+\ExperienceEntry{MScR Integrative Neuroscience}{Sep 2017 - Aug 2018}{University of Edinburgh}{Overview of the field including taught and research components. Graduated with Merit.}{\textbf{Project:} \textit{Thalamocortical Control of Skilled Movement}. Supervised by Dr Joshua Dacre and Prof Ian Duguid}
+\sepspace
+
+\ExperienceEntry{BSc (Hons) Neurosciences}{Sep 2013 - Jul 2016}{University of Dundee}{Focused towards pharmacology and chemistry. Attained Upper Second Class (2:1) Honours.}{\textbf{Honours project:} \textit{Design and Synthesis of N-(4-methylthiazol-2-yl)-2-(6-phenylpyridazin-3-ylthio)acetamide: An Inhibitor of the KCC2 Cotransporter}. Supervised by Dr Art Crossman and Dr Sheriar Hormuzdi}
+\sepspace
+
+\ExperienceEntry{Anthropology \& Cinema (PPD)}{Dec 2016 - May 2017}{Universidad Nacional de Educación a Distancia (UNED)}{Short course on film analysis in relation to philosophical and anthropological issues.}{}
+
+
+%% Research experience
+\NewPart{Research experience}{}
+
+\ExperienceEntry{Guest Scientist}{Oct - Dec 2016}{Institut für Physiologie und Pathophysiologie, Universität Heidelberg}{Studied several aspects of KCC2 cotransporter function, particularly, its energy consumption.}{}
+\sepspace
+
+\ExperienceEntry{Research Intern}{May - Jul 2015}{Ninewells Hospital Division of Neuroscience, University of Dundee}{Investigated the effects of neonicotinoid pesticides on bumblebee brain function and colony development to determine their relative risk at field-relevant concentrations.}{}
+
+
+%% Additional experience
+\NewPart{Additional experience}{}
+
+\ExperienceEntry{Science Editor}{April 2015 - 2016}{The Magdalen (DUSA Media)}{Inspected and published articles written by a selection of contributors and myself. My achievements led to my nomination for DUSA Media’s 2015-16 Best Media Newcomer award.}{}
+\sepspace
+
+\ExperienceEntry{Secretary \& Cofounder}{Sep 2014 - Oct 2015}{Dundee University Young Researchers Association (DUYRA)}{Various duties including data management, recordkeeping, designing posters and flyers, representing the society at events, and an active role in the approval of group projects.}{}
+
+
+%% Skills
+\NewPart{Skills}{}
+
+\SkillsEntry{Laboratory}{Microneurosurgical techniques (craniotomy, stereotactic injection, headplate implantation, etc). Implementation and optimisation of behavioural paradigms. Pharmacological and optogenetic manipulation of \textit{in vivo} neural activity. Transcardial perfusion, brain fixation, and processing and analysis of histological samples. Basic command of cell culture and transfection, organic synthesis, and \textit{in vitro} fluorescence imaging.}
+\sepspace
+
+\SkillsEntry{Computing}{Software: Competent in Adobe Photoshop, Affinity Designer, ImageJ/FIJI and Autodesk Fusion. Programming \& markup: Competent in \textsc{matlab} and \LaTeX, basic Python.}
+\sepspace
+
+\SkillsEntry{Miscellaneous}{Design and 3D-printing of components.}
+\sepspace
+
+\SkillsEntry{Languages}{Fluent in English and Spanish, conversational Portuguese}
+
+
+%% Publications
+\NewPart{Publications}{}
+
+\noindent\hangindent=0.5em\hangafter=0 \small Dacre J, Colligan M, Ammer A, Schiemann J, Clarke T, \textbf{Chamosa-Pino V}, Claudi F, Harston JA, Eleftheriou C, Pakan JMP, Huang CC, Hantman A, Rochefort NL, Duguid I. Cerebellar-recipient motor thalamus drives behavioral context-specific movement initiation. \textit{BioRxiv}. 2019. doi: \href{https://www.biorxiv.org/content/10.1101/802124v1}{10.1101/802124} \par
+\sepspace
+
+\noindent\hangindent=0.5em\hangafter=0 \small Moffat C, Buckland ST, Samson AJ, McArthur R, \textbf{Chamosa Pino V}, Bollan KA, Huang JTJ, Connolly CN. Neonicotinoids target distinct nicotinic acetylcholine receptors and neurons, leading to differential risks to bumblebees. \textit{Scientific Reports}. 2016, 6 (24764): 1-10. doi: \href{https://www.nature.com/articles/srep24764}{10.1038/srep24764} \par
+\sepspace
+
+\noindent\hangindent=0.5em\hangafter=0 \small As well as several non-academic articles published in \href{https://issuu.com/themagdalen}{\textit{The Magdalen}}.
+
+
+%% Affiliations
+\NewPart{Affiliations}{}
+
+\AffiliationEntry{British Neuroscience Association}{Sep 2017 - present}{Postgraduate member}
+\sepspace
+
+\AffiliationEntry{Society for the Neurobiology of Language}{Aug 2015 - Aug 2016}{Student member}
+
+
+%% References
+\NewPart{References}{}
+
+\noindent\makebox[\textwidth][c]{%{%
+\begin{minipage}[t]{0.8\textwidth}
+	\begingroup
+    \parindent=0pt
+	\parfillskip=0pt
+	\begin{minipage}[t]{0.47\textwidth}
+	\centering
+    \textbf{Professor Ian Duguid} \par
+	University of Edinburgh \par
+   \url{ian.duguid@ed.ac.uk}
+    \end{minipage}%
+	\hfill
+	\begin{minipage}[t]{0.47\textwidth}
+	\centering
+	\textbf{Dr Chris Connolly} \par
+	University of Dundee\par
+    \url{c.n.connolly@dundee.ac.uk}
+	\end{minipage}%	
+	\par\endgroup
+\end{minipage}}
+
+\end{document}
