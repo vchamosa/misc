@@ -1,2 +1,2 @@
-# Miscellanea
-Bits of coursework and other random scripts - plenty of which are unfinished
+# misc
+Miscellaneous bits of coursework and other random scripts -- plenty of which are unfinished

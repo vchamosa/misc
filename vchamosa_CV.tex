@@ -6,18 +6,16 @@
 \documentclass[paper=a4,fontsize=11pt]{scrartcl}
 
 %% Packages
-\usepackage[english]{babel}
+\usepackage[UKenglish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage{graphicx}
 \usepackage[svgnames]{xcolor}
-\usepackage{geometry}
-	\textheight=690px
-	\addtolength{\voffset}{-1cm}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=27mm]{geometry}
 \usepackage{url}
 \usepackage[hidelinks=true]{hyperref}
 \usepackage{fancyhdr}
-\usepackage[us,24hr]{datetime}
+\usepackage[24hr]{datetime}
     \frenchspacing
     \pagestyle{fancy}
     \fancyhf{}
@@ -32,6 +30,12 @@
 \newlength{\spacebox}
 \settowidth{\spacebox}{8888888888}
 \newcommand{\sepspace}{\vspace*{1em}}
+
+\newenvironment{bulletlist}{ % itemize with better distances
+    \itemize
+    \setlength\itemsep{0pt} % distances within bullet list
+}{%
+    \enditemize}
 
 \newcommand{\MyName}[1]{ % name
 		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
@@ -56,16 +60,21 @@
 \newcommand{\SkillsEntry}[2]{ % skills
 		\noindent\hangindent=0em\hangafter=0 
 		\parbox{\spacebox}{        
-		\textbf{#1}} % skill category
-		\hspace{2em} \hangindent=1em \hangafter=1 #2 \par} % skill list etc	
+		\textbf{#1}} \hfill % skill category
+		\colorbox{White}{
+            \parbox{34.75em}{
+		\begin{bulletlist}#2\end{bulletlist}}} \par} % skill list etc	
         
-\newcommand{\AffiliationEntry}[3]{ % societal affiliations
+\newcommand{\AffiliationEntry}[3]{ % membership of academic societies
 		\noindent \textbf{#1} \hfill % society
 		\colorbox{White}{
             \parbox{9em}{
 			\hfill\color{Black}#2}} \par % duration
 		\noindent #3 \par} % membership type
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %% Content
@@ -75,14 +84,11 @@
 %% Name, etc
 \MyName{Victor Chamosa Pino}
 \sepspace
-\Contactdetails{\url{s1346505@ed.ac.uk} \thinspace$\bullet$ \thinspace \href{https://github.com/vchamosa}{\includegraphics[scale = 0.28]{GitHub-Mark-32px.png}\small{vchamosa}}} %GitHub logo source: https://github.com/logos
+\Contactdetails{\href{mailto:victor.chamosa@posteo.net}{\texttt{victor.chamosa@posteo.net}} \thinspace$\bullet$ \thinspace \href{https://github.com/vchamosa}{\includegraphics[scale = 0.28]{GitHub-Mark-32px.png}\small{vchamosa}}} %GitHub logo source: https://github.com/logos
 
 
 %% Education
-\NewPart{Education}{}
-
-\ExperienceEntry{Precision Medicine DTP}{Sep 2018 - present}{Duguid Lab, University of Edinburgh}{MRC-funded PhD studentship with integrated study.}{\textbf{Project:} \textit{Thalamocortical Control of Motor Choice}. Supervised by Prof Ian Duguid and Dr Matthias Hennig}
-\sepspace
+\NewPart{Education}
 
 \ExperienceEntry{MScR Integrative Neuroscience}{Sep 2017 - Aug 2018}{University of Edinburgh}{Overview of the field including taught and research components. Graduated with Merit.}{\textbf{Project:} \textit{Thalamocortical Control of Skilled Movement}. Supervised by Dr Joshua Dacre and Prof Ian Duguid}
 \sepspace
@@ -94,7 +100,10 @@
 
 
 %% Research experience
-\NewPart{Research experience}{}
+\NewPart{Work experience}
+
+\ExperienceEntry{Postgraduate Researcher}{Sep 2018 - Apr 2022}{Centre for Discovery Brain Sciences, University of Edinburgh}{MRC-funded position in the Precision Medicine doctoral training programme, contributing to different projects researching thalamic, cortical and corticospinal control of skilled movement.}{}
+\sepspace % change this somehow
 
 \ExperienceEntry{Guest Scientist}{Oct - Dec 2016}{Institut für Physiologie und Pathophysiologie, Universität Heidelberg}{Studied several aspects of KCC2 cotransporter function, particularly, its energy consumption.}{}
 \sepspace
@@ -103,33 +112,45 @@
 
 
 %% Additional experience
-\NewPart{Additional experience}{}
+\NewPart{Additional experience}
 
-\ExperienceEntry{Science Editor}{April 2015 - 2016}{The Magdalen (DUSA Media)}{Inspected and published articles written by a selection of contributors and myself. My achievements led to my nomination for DUSA Media’s 2015-16 Best Media Newcomer award.}{}
+\ExperienceEntry{Science Editor}{April 2015 - 2016}{The Magdalen, DUSA Media}{Inspected and published articles written by a selection of contributors and myself. My achievements led to my nomination for DUSA Media’s 2015-16 Best Media Newcomer award.}{}
 \sepspace
 
 \ExperienceEntry{Secretary \& Cofounder}{Sep 2014 - Oct 2015}{Dundee University Young Researchers Association (DUYRA)}{Various duties including data management, recordkeeping, designing posters and flyers, representing the society at events, and an active role in the approval of group projects.}{}
 
 
 %% Skills
-\NewPart{Skills}{}
+\NewPart{Skills}
 
-\SkillsEntry{Laboratory}{Microneurosurgical techniques (craniotomy, stereotactic injection, headplate implantation, etc). Implementation and optimisation of behavioural paradigms. Pharmacological and optogenetic manipulation of \textit{in vivo} neural activity. Transcardial perfusion, brain fixation, and processing and analysis of histological samples. Basic command of cell culture and transfection, organic synthesis, and \textit{in vitro} fluorescence imaging.}
-\sepspace
+\SkillsEntry{Technical}{
 
-\SkillsEntry{Computing}{Software: Competent in Adobe Photoshop, Affinity Designer, ImageJ/FIJI and Autodesk Fusion. Programming \& markup: Competent in \textsc{matlab} and \LaTeX, basic Python.}
-\sepspace
+\item Data analysis: Time series analysis, blending of different data types. 
+\item Software development management with Git.
+\item Communication of complex topics at different levels of expertise.
+}
 
-\SkillsEntry{Miscellaneous}{Design and 3D-printing of components.}
-\sepspace
+\SkillsEntry{Computing}{
+\item Software: Microsoft Office suite, Adobe Photoshop, Affinity Designer and Autodesk Fusion. 
+\item Programming \& markup: Competent in \textsc{matlab} and \LaTeX, basic Python.
+}
 
-\SkillsEntry{Languages}{Fluent in English and Spanish, conversational Portuguese}
+\SkillsEntry{Miscellaneous}{
+\item Various laboratory techniques including handling animals, microsurgery, pharmacological and optogenetic manipulation of \textit{in vivo} neural activity, processing of histology, and preparation of solutions.
+\item Graphic design and image editing.
+\item Design and 3D-printing of components.
+}
+
+\SkillsEntry{Languages}{
+\item Fluent in English and Spanish
+\item Conversational Portuguese
+}
 
 
 %% Publications
-\NewPart{Publications}{}
+\NewPart{Publications}
 
-\noindent\hangindent=0.5em\hangafter=0 \small Dacre J, Colligan M, Ammer A, Schiemann J, Clarke T, \textbf{Chamosa-Pino V}, Claudi F, Harston JA, Eleftheriou C, Pakan JMP, Huang CC, Hantman A, Rochefort NL, Duguid I. Cerebellar-recipient motor thalamus drives behavioral context-specific movement initiation. \textit{BioRxiv}. 2019. doi: \href{https://www.biorxiv.org/content/10.1101/802124v1}{10.1101/802124} \par
+\noindent\hangindent=0.5em\hangafter=0 \small Dacre J, Colligan M, Clarke T, Ammer JJ, Schiemann J, \textbf{Chamosa-Pino V}, Claudi F, Harston JA, Eleftheriou C, Pakan JMP, Huang CC, Hantman A, Rochefort NL, Duguid I. A cerebellar-thalamocortical pathway drives behavioral context-dependent movement initiation. \textit{Neuron}. 2021. doi: \href{https://doi.org/10.1016/j.neuron.2021.05.016}{10.1016/j.neuron.2021.05.016} \par
 \sepspace
 
 \noindent\hangindent=0.5em\hangafter=0 \small Moffat C, Buckland ST, Samson AJ, McArthur R, \textbf{Chamosa Pino V}, Bollan KA, Huang JTJ, Connolly CN. Neonicotinoids target distinct nicotinic acetylcholine receptors and neurons, leading to differential risks to bumblebees. \textit{Scientific Reports}. 2016, 6 (24764): 1-10. doi: \href{https://www.nature.com/articles/srep24764}{10.1038/srep24764} \par
@@ -139,36 +160,25 @@
 
 
 %% Affiliations
-\NewPart{Affiliations}{}
+\NewPart{Affiliations}
 
-\AffiliationEntry{British Neuroscience Association}{Sep 2017 - present}{Postgraduate member}
+\AffiliationEntry{British Neuroscience Association}{Sep 2017 - June 2021}{Postgraduate member}
 \sepspace
 
 \AffiliationEntry{Society for the Neurobiology of Language}{Aug 2015 - Aug 2016}{Student member}
 
 
-%% References
-\NewPart{References}{}
+%% Projects
+%\NewPart{Projects}
 
-\noindent\makebox[\textwidth][c]{%{%
-\begin{minipage}[t]{0.8\textwidth}
-	\begingroup
-    \parindent=0pt
-	\parfillskip=0pt
-	\begin{minipage}[t]{0.47\textwidth}
-	\centering
-    \textbf{Professor Ian Duguid} \par
-	University of Edinburgh \par
-   \url{ian.duguid@ed.ac.uk}
-    \end{minipage}%
-	\hfill
-	\begin{minipage}[t]{0.47\textwidth}
-	\centering
-	\textbf{Dr Chris Connolly} \par
-	University of Dundee\par
-    \url{c.n.connolly@dundee.ac.uk}
-	\end{minipage}%	
-	\par\endgroup
-\end{minipage}}
+
+
+%% Interests
+%\NewPart{Interests}
+
+
+
+
+
 
 \end{document}
