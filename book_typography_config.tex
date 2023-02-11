@@ -1,0 +1,97 @@
+%% Typography config %%
+% For typesetting and editing old books
+%
+% Author: Victor Chamosa
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[11pt]{report}
+
+%% Packages
+\usepackage[a5paper,width=105mm,top=17mm,bottom=24mm,footnotesep=12pt]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage[greek,english]{babel}
+\usepackage[activate={true,nocompatibility},final,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{graphicx}
+%\usepackage{pgffor} 
+%\usepackage{float}
+\usepackage{gensymb}
+\usepackage{graphics}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{ragged2e}
+%\usepackage{pdfpages}
+\usepackage[perpage]{footmisc}
+%\usepackage{booktabs} % good for beautiful tables
+\usepackage[hypcap=true,font={small}]{caption}
+\usepackage{setspace}
+% NOTE: This must be the last \usepackage in the whole document!
+\usepackage[bookmarksopen,bookmarksnumbered,hidelinks,linktocpage]{hyperref}
+
+%% Page style & text geometry configs
+\fancypagestyle{plain}{%
+\fancyhf{}% clear all header and footer fields
+\fancyfoot[C]{\thepage} % except the center
+\renewcommand{\headrulewidth}{0pt}%
+\renewcommand{\footrulewidth}{0pt}%
+\renewcommand{\footruleskip}{32pt}%
+}
+\fancypagestyle{custom}{%
+\fancyhf{}% clear all header and footer fields
+\fancyfoot[C]{\thepage} % except the center
+\renewcommand{\headrulewidth}{0pt}%
+\renewcommand{\footrulewidth}{0pt}%
+\renewcommand{\footruleskip}{32pt}%
+}
+\pagestyle{custom}
+\setstretch{1.15}
+
+%% Footnote config
+\setlength{\footnotemargin}{0.8em}
+\renewcommand{\footnotelayout}{\hspace{0.3em}}
+
+%% Table of contents config
+\dottedcontents{section}[3.8em]{}{2.3em}{1pc}
+\dottedcontents{subsection}[6.1em]{}{3.2em}{1pc}
+\titlecontents{section}[0em]{}
+{}{}
+{\titlerule*[1pc]{.}\contentspage}[\hspace*{24pt}]
+
+%% Section title configs
+\renewcommand{\chaptername}{}
+\renewcommand{\thechapter}{}
+\titleformat{\chapter}[display]
+  {\centering\normalsize\scshape}{\thechapter}{-18pt}{}
+\titlespacing*{\chapter}
+  {0pt}{24pt}{10pt}
+%
+\renewcommand{\thesection}{}
+\titleformat{\section}[block]
+  {\normalfont\large\centering\scshape}{\thesection}{0em}{}
+\titlespacing*{\section}
+  {0pt}{0pt}{12pt}
+%
+\renewcommand{\thesubsection}{}
+\titleformat{\subsection}[block]
+  {\normalfont\normalsize\centering\scshape}{\thesubsection}{0em}{}
+%\titlespacing*{\subsection}
+%  {0pt}{0pt}{2.5pt}
+
+%% Other settings
+\renewcommand\thefigure{\arabic{figure}}
+\captionsetup[figure]{labelfont={bf},textfont=small}
+\newcommand{\latex}{\LaTeX\xspace}
+\newcommand{\parspace}{\vspace{10pt}\noindent}
+\frenchspacing
+
+%% Title
+\title{}
+\author{}
+\date{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
