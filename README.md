@@ -1,2 +1,2 @@
 # misc
-Miscellaneous bits of coursework and other random scripts -- plenty of which are unfinished
+Random scripts, unfinished bits of coursework and other things that don't deserve their own repo
