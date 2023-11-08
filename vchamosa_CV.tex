@@ -11,7 +11,7 @@
 \usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage{graphicx}
 \usepackage[svgnames]{xcolor}
-\usepackage[a4paper,width=150mm,top=25mm,bottom=27mm]{geometry}
+\usepackage[a4paper,width=160mm,top=19mm,bottom=27mm]{geometry}
 \usepackage{url}
 \usepackage[hidelinks=true]{hyperref}
 \usepackage{fancyhdr}
@@ -23,8 +23,9 @@
     \renewcommand{\headrulewidth}{0pt}
 \usepackage{sectsty}
     \sectionfont{
-	    \usefont{OT1}{phv}{b}{n}
-	    \sectionrule{0pt}{0pt}{-5pt}{3pt}}
+        \large
+	    \usefont{OT1}{phv}{b}{sc}
+	    \sectionrule{0pt}{0pt}{-5pt}{1.1pt}}
 
 %% Macros
 \newlength{\spacebox}
@@ -38,14 +39,12 @@
     \enditemize}
 
 \newcommand{\MyName}[1]{ % name
-		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\LARGE \usefont{OT1}{phv}{b}{n} \hfill #1
 		\par \normalsize \normalfont}
 
 \newcommand{\Contactdetails}[1]{ % for email and other account/contact details
 		\normalsize  \usefont{OT1}{phv}{m}{n}\hfill #1
 		\par \small \normalfont}
-
-\newcommand{\NewPart}[1]{\section*{\textsc{#1}}} % sections
 
 \newcommand{\ExperienceEntry}[5]{ % studies, jobs and other experience
 		\noindent \textbf{#1} \hfill % degree/position
@@ -88,12 +87,10 @@
 
 
 %% Personal summary
-\sepspace
-\noindent
 
 
 %% Work experience
-\NewPart{Work experience}
+\section*{Work experience}
 
 \ExperienceEntry{Data Management \& Reporting Officer}{Sep 2022  - present}{Energy Saving Trust}{I support Scottish government, local authorities and housing associations with their data needs for energy efficiency and fuel poverty schemes. Responsibilities include analysing, updating and maintaining the quality of large housing stock datasets, helping guide the development of internal databases and analysis tools, and training stakeholders to derive useful insights from their data.}{}
 \sepspace
@@ -109,7 +106,7 @@
 
 
 %% Additional experience
-\NewPart{Additional experience}
+\section*{Additional experience}
 
 \ShortEntry{Science Editor}{April 2015 - 2016}{The Magdalen, DUSA Media}
 %{Inspected and curated articles written by a selection of contributors including myself. My achievements led to my nomination for DUSA Media’s 2015-16 Best Media Newcomer award.}{}
@@ -120,19 +117,21 @@
 
 
 %% Education
-\NewPart{Education}
+\section*{Education}
 
 \ExperienceEntry{MScR Integrative Neuroscience}{Sep 2017 - Aug 2018}{University of Edinburgh}{\textbf{Research project:} \textit{Thalamocortical Control of Skilled Movement}}{}
 \sepspace
 
-\ExperienceEntry{BSc (Hons) Neurosciences}{Sep 2013 - Jul 2016}{University of Dundee}{\textbf{Honours project:} \textit{Design and Synthesis of N-(4-methylthiazol-2-yl)-2-(6-phenylpyridazin-3-ylthio)acetamide: An Inhibitor of the KCC2 Cotransporter}}{}
+\ExperienceEntry{BSc (Hons) Neurosciences}{Sep 2013 - Jul 2016}{University of Dundee}{\textbf{Honours project:} \textit{Design and Synthesis of N-(4-methylthiazol-2-yl)-2-(6-phenylpyridazin-3-ylthio)-acetamide: An Inhibitor of the KCC2 Cotransporter}}{}
 \sepspace
 
 %\ExperienceEntry{Anthropology \& Cinema (PPD)}{Dec 2016 - May 2017}{Universidad Nacional de Educación a Distancia (UNED)}{Short course on film analysis in relation to philosophical and anthropological issues.}{}
 
 
 %% Qualifications, courses, etc.
-\NewPart{Other qualifications}
+\section*{Other qualifications}
+\ShortEntry{ArcGIS 2 - Essentials of ArcGIS 10.x for Desktop}{Aug 2023}{Esri UK}
+\sepspace
 
 \ShortEntry{Fundamentals of R}{Jan 2023}{QA}
 \sepspace
@@ -150,10 +149,9 @@
 
 
 %% Skills
-\NewPart{Skills}
+\section*{Skills}
 
 \SkillsEntry{Technical}{
-
 \item Analysis of time series and categorical data, data cleaning \& wrangling, data blending. 
 \item Software development management with Git.
 }
@@ -184,7 +182,7 @@
 
 
 %% Publications
-\NewPart{Publications}
+\section*{Publications}
 
 \noindent\hangindent=0.5em\hangafter=0 \small Dacre \textit{et al}. A cerebellar-thalamocortical pathway drives behavioral context-dependent movement initiation. \textit{Neuron}. 2021, 109 (14): 2326-2338. doi: \href{https://doi.org/10.1016/j.neuron.2021.05.016}{10.1016/j.neuron.2021.05.016} \par
 \sepspace
@@ -196,11 +194,11 @@
 
 
 %% Projects
-%\NewPart{Projects}
+%\section*{Projects}
 
 
 %% Affiliations
-\NewPart{Affiliations}
+\section*{Affiliations}
 
 \ShortEntry{British Neuroscience Association}{Sep 2017 - June 2021}{Postgraduate member}
 \sepspace
@@ -209,11 +207,11 @@
 
 
 %% Interests
-%\NewPart{Interests}
+%\section*{Interests}
 
 
 %% References
-\NewPart{References}
+\section*{References}
 Available upon request.
 
 
